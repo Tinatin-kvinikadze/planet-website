@@ -66,7 +66,7 @@ menu_buttons.forEach(button => {
     structureButton.addEventListener('click', () => {
         structureButton.style.backgroundColor = data.color;
     });
-    geologyBtn.addEventListener('click', () => {
+    geologyButton.addEventListener('click', () => {
         geologyButton.style.backgroundColor = data.color;
     });
    
