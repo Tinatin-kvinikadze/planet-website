@@ -2,16 +2,6 @@
 
 
 
-const btnElist = document.querySelectorAll('.btn');
-
-
-btnElist.forEach(btnEl => {
-btnEl.addEventListener('click', () => {
-    document.querySelector('.special')?.classList.remove('special');
-    btnEl.classList.add('special');
-});
-});
-
 
 const menu_btn = document.querySelector('.hamburger');
 	const mobile_menu = document.querySelector('.mobile-nav');
@@ -22,114 +12,190 @@ const menu_btn = document.querySelector('.hamburger');
 		mobile_menu.classList.toggle('is-active');
        
 	});
-
-
-
-
-
-
-
-// fetch("https://planets-api.vercel.app/api/v1/planets")
-// .then((data)=>{
-// return data.json();
-// }).then((objectData=>{
-//     console.log(objectData[0].name);
-//     let tableData="";
-//     objectData.map((values)=>{
-//         tableData +=`<a>${values.name}</a><a>${values.color}</a><a>${values.rotation}</a>`;
-//     });
-//     document.getElementById("venus").
-//     innerHTML=tableData;
-// }))
-
-
-
-
-
-
-
-
-
-
-//     // console.log(data);
-//     return data.json();
-// }).then((objectData)=>{
-//     console.log(objectData(0).overview);
-//     let nameData="";
-//     objectData.map((values)=>{
-//        nameData+=`<a>${values.overview}</a>`;
-//     });
-//     document.getElementById("venus").
-//     innerHTML=nameData;
-// })
-  const api_url ='https://planets-api.vercel.app/api/v1/planets';
-  const mainText = document.querySelector("#mainText");
-  const mainImage =document.querySelector("#image");
-
-  const mercury =document.querySelector("#venus");
-  
-async function getData() {
-    const response = await fetch(api_url);
-    const data = await response.json();
-  
-    mainText.textContent=Object.name;
-    console.log(data);
-    
-
-}
-
-
-getData();
-
-
-mercury.addEventListener("click", () => {
-    getData();
+  const menu_buttons = mobile_menu.querySelectorAll('.planet-name');
+menu_buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        
+        menu_btn.classList.remove('is-active');
+        mobile_menu.classList.remove('is-active');
+    });
 });
 
-  function change_text() {
-    document.getElementById("demo").innerHTML="Mercury appears to have a solid silicate crust and mantle overlying a solid, iron sulfide outer core layer, a deeper liquid core layer, and a solid inner core. The planet's density is the second highest in the Solar System at 5.427 g/cm3 , only slightly less than Earth's density."
-    ;
 
 
-  }
+
+
+    const website_URL = "https://planets-api.vercel.app/api/v1/planets/"
+   
+    
+    const planetName =document.querySelector("#mainText")
+    const planetImage = document.querySelector("#imageContainer")
+    const planetDescription = document.querySelector("#demo")
+    const planets = document.querySelectorAll(".planet-name") 
+    const rotation = document.querySelector("#rotationNumb")
+    const revolution = document.querySelector("#revolutionNumb")
+    const radius = document.querySelector("#radiusNumb")
+    const temperature = document.querySelector("#tempNumb")
+    const overviewButton = document.querySelector("#info-first")
+    const planetsButton = document.querySelectorAll(".planet-name")
+    const structureButton = document.querySelector("#info-two")
+    const geologyButton = document.querySelector("#info-three")
+    const btnElist = document.querySelectorAll('.btn')
+
+    const wikiURL= "https://en.wikipedia.org/wiki/"
+    const wikipediaSource = document.querySelector("#wikiUrl")
+
 
   
-  function change_first() {
-    document.getElementById("demo").innerHTML="Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.";
+    async function getPlanets(user) {
+  try {
+    const response = await fetch(website_URL + user);
+    const data = await response.json();
+    rotation.innerHTML = data.rotation;
+    revolution.innerHTML = data.revolution;
+    radius.innerHTML = data.radius;
+    temperature.innerHTML = data.temperature;
+    overviewButton.style.backgroundColor = 'transparent';
+    structureButton.style.backgroundColor = 'transparent';
+    geologyButton.style.backgroundColor = 'transparent';
+
+   
+    overviewButton.addEventListener('click', () => {
+        overviewButton.style.backgroundColor = data.color;
+    });
+    structureButton.addEventListener('click', () => {
+        structureButton.style.backgroundColor = data.color;
+    });
+    geologyBtn.addEventListener('click', () => {
+        geologyButton.style.backgroundColor = data.color;
+    });
+   
+
+
+
+
+
+
+
+
+    planetImage.innerHTML = `
+        <img class="image-box" src = ${data.images.planet} />`;
+    planetDescription.innerHTML = `
+        <p class="aboutMe"> ${data.overview.content} </p>`;
+
+    planetName.innerHTML = `<h1 class="main-text">${data.name} </h1>`;
     
+
+
+
+
+
+
+
+
+    overviewButton.addEventListener("click", () => {
+      planetImage.innerHTML = `
+          <img class="image-box" src = ${data.images.planet} />`;
+      planetDescription.innerHTML = `
+        <p class="aboutMe"> ${data.overview.content} </p>`;
+      overviewButton.style.backgroundColor = `<div class="info-first">${data.overview.color}</div>`;
+      overviewButton.target.style.backgroundColor = `${data.overview.color}`;
+
+    });
+
+
+
+    structureButton.addEventListener("click", () => {
+      planetImage.innerHTML = `
+        <img class="image-box" src=${data.images.internal} />`;
+      planetDescription.innerHTML = `
+        <p class="aboutMe"> ${data.structure.content} </p>`;
+      structureButton.style.backgroundColor = `<div class="info-first">${data.structure.color}</div>`;
+
+    });
+    geologyButton.addEventListener("click", () => {
+      planetImage.innerHTML = `
+           <img class="image-box" src=${data.images.planet} />
+            <img class="geologyImg" src=${data.images.geology} />
+            `;
+      planetDescription.innerHTML = `
+            <p class="aboutMe"> ${data.geology.content} </p>`;
+      geologyButton.style.backgroundColor = `<div class="info-first">${data.geology.color}</div>`;
+
+    });
+
+    rotation.innerHTML = `
+          <p class="rotationNumb">${data.rotation}</p>`;
+
+          wikipediaSource.addEventListener('click', () => {
+            wikipediaSource.href = data.overview.source
+        });
+
   }
 
-    
-  function change_third() {
-    document.getElementById("demo").innerHTML="Mercury's surface is similar in appearance to that of the Moon, showing extensive mare-like plains and heavy cratering, indicating that it has been geologically inactive for billions of years. It is more heterogeneous than either Mars's or the Moon’s.";
-    
+  catch (error) {
+    console.log(error);
   }
+}
+  
+
+    getPlanets("mercury")
+
+    for (let i=0; i<planets.length; i++) {
+      planets[i].addEventListener('click', () => {
+          getPlanets(planets[i].textContent)
+                      })
+
+                    
+                  
+                      
+                              
+                                btnElist.forEach(btnEl => {
+                                  btnEl.addEventListener("click", () => {
+                                      
+                                      btnElist.forEach(btn => {
+                                          btn.style.backgroundColor = 'transparent';
+                                          btn.classList.remove("active");
+                                      });
+                                     
+                                      btnEl.style.backgroundColor = '#419EBB'; 
+                                      btnEl.classList.add("active");
+
+                                    })
+
+                                  });
+                              };
+                            
+                              btnElist.forEach(btnEl => {
+                                btnEl.addEventListener("click", () => {
+                                    if (window.innerWidth <= 375) {
+                                        
+                                        btnElist.forEach(btn => {
+                                            btn.style.backgroundColor = 'transparent';
+                                            btn.classList.remove("active");
+                                        });
+                                    }
+                                    
+                                    btnEl.style.backgroundColor = 'transparent'; 
+                                    btnEl.classList.add("active");
+                                });
+                            });
+
+
+                    
+
+
+
+
+
+
+
+    
+
+
 
 
  
 
 
-  function change_image_one() {
-    var img = document.getElementById('image');
-    img.src = 'planet-mercury1.svg';
-    
-  }
-
-  
-  function change_image_two() {
-    var img = document.getElementById('image');
-    img.src = 'planet-mercury-internal.svg';
-    
-  }
-  
-  function change_image_three() {
-    var img = document.getElementById('image');
-    img.src = 'geology-mercury.png'; 
-  }
-
-
-  function other_image() {
-    var img = document.getElementById('image');
-    img.src = 'planet-mercury1.svg';
-  }
  

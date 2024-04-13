@@ -14,41 +14,41 @@
         <nav class="navigacia">
             <p class="logo">THE PLANETS</p>
             <div class="nav-link"> 
-               <a href="#" id="mercury">MERCURY</a>
-                <a href="#"id="venus">VENUS</a>
-                <a href="#"id="earth">EARTH</a>
-                <a href="#"id="mars">MARS</a>
-                <a href="#"id="jupiter">JUPITER</a>
-                <a href="#"id="saturn">SATURN</a>
-                <a href="#"id="uranus">URANUS</a>
-                <a href="#"id="neptune">NEPTUNE</a>
+               <a href="#" id="mercury" class="planet-name">MERCURY</a>
+                <a href="#"id="venus" class="planet-name">VENUS</a>
+                <a href="#"id="earth" class="planet-name">EARTH</a>
+                <a href="#"id="mars" class="planet-name">MARS</a>
+                <a href="#"id="jupiter" class="planet-name">JUPITER</a>
+                <a href="#"id="saturn" class="planet-name">SATURN</a>
+                <a href="#"id="uranus" class="planet-name">URANUS</a>
+                <a href="#"id="neptune" class="planet-name">NEPTUNE</a>
         </nav>
         <button class="hamburger">
             <div class="bar"></div>
     </header>
     <nav class="mobile-nav">
-         <a href="#" id="mercury"><img src="mercury.png">MERCURY</a>
+         <a href="#" id="mercury" class="planet-name"><img src="mercury.png">MERCURY</a>
         <hr class="nav-line">
         
-        <a href="#"id="venus"><img src="venus.png">VENUS</a>
+        <a href="#"id="venus" class="planet-name"><img src="venus.png">VENUS</a>
         <hr class="nav-line">
         
-        <a href="#"id="earth">  <img src="earth.png">EARTH</a>
+        <a href="#"id="earth" class="planet-name"><img src="earth.png">EARTH</a>
         <hr class="nav-line">
        
-        <a href="#"id="mars">  <img src="mars.png">MARS</a>
+        <a href="#"id="mars" class="planet-name"><img src="mars.png">MARS</a>
         <hr class="nav-line">
        
-        <a href="#"id="jupiter"><img src="jupiter.png">JUPITER</a>
+        <a href="#"id="jupiter" class="planet-name"><img src="jupiter.png">JUPITER</a>
         <hr class="nav-line">
         
-        <a href="#"id="saturn"> <img src="saturn.png">SATURN</a>
+        <a href="#"id="saturn" class="planet-name"><img src="saturn.png">SATURN</a>
         <hr class="nav-line">
          
-        <a href="#"id="uranus"> <img src="uranus.png">URANUS</a>
+        <a href="#"id="uranus" class="planet-name"><img src="uranus.png">URANUS</a>
         <hr class="nav-line">
         
-        <a href="#"id="neptune">  <img src="neptune.png">NEPTUNE</a>
+        <a href="#"id="neptune" class="planet-name">  <img src="neptune.png">NEPTUNE</a>
        
         
         
@@ -57,34 +57,34 @@
     <hr class="line">
     <main>
         <div class="main-box" >
-        <div class="image-box">
-        <img  src="planet-mercury1.svg" class="mercury-image" id="image">
-        <img id="secondimage" src=planet-mercury1.png" style="display: none;">
+        <div class="image-box" id="imageContainer">
+        <img  src="" class="mercury-image" id="image"/>
+        <img src="" id="secondimage" class="geologyImg" />
     
     </div>
     
     <div class="planet-info">
     <h1 class="main-text" id="mainText">MERCURY</h1>
-    <p id="demo">Mercury is the smallest planet in 
+    <p id="demo" class="aboutMe">Mercury is the smallest planet in 
         the Solar System and the closest to the Sun. 
         Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.</p>
     
     <div class="wikipedia">
-    <p class="source">Source</p>
-    <a  class="source" href="https://en.wikipedia.org/wiki/Mercury_(planet)"> :Wikipedia </a>
+    <p class="source" id="wikiSource">Source</p>
+    <a  class="source"id="wikiUrl" href="" target="_blank"> :Wikipedia <img class="wikiadd" src="external-link-square-with-an-arrow-in-right-diagonal.png" ></a>
 </div>
 </div>
 </div>
-<div class="info">
-   <div onclick="change_first();change_image_one()" class="btn" id="info-first">
+<div class="info" >
+   <div class="btn" id="info-first">
     <p class="number">01</p>
     <h1>OVERVIEW</h1>
    </div>
-    <div onclick="change_text();change_image_two() "class="btn" id="info-two">
+    <div class="btn" id="info-two">
         <p class="number">02</p>
-        <h1><span>INTERNAL</span>STRUCTURE</h1>
+        <h1><span>INTERNAL</span> STRUCTURE</h1>
     </div>
-        <div onclick="change_third();change_image_three();other_image()" class="btn" id="info-three">
+        <div class="btn" id="info-three">
             <p class="number">03</p>
             <h1>SURFACE <span>GEOLOGY</span></h1>
         </div>
@@ -93,19 +93,19 @@
     <div class="info2">
     <div class="infoContainer">
        <p class="infoText">ROTATION TIME</p>
-       <p class="infoNumber">58.6 Days</p>
+       <p class="infoNumber" id="rotationNumb">58.6 Days</p>
     </div>
     <div class="infoContainer">
         <p class="infoText">REVOLUTION TIME</p>
-        <p class="infoNumber">87.97 Days</p>
+        <p class="infoNumber" id="revolutionNumb">87.97 Days</p>
      </div>
      <div class="infoContainer">
         <p class="infoText">RADIUS</p>
-        <p class="infoNumber">2,439.7 KM</p>
+        <p class="infoNumber" id="radiusNumb">2,439.7 KM</p>
      </div>
      <div class="infoContainer">
         <p class="infoText">AVERAGE TEMP.</p>
-        <p class="infoNumber">430°c</p>
+        <p class="infoNumber" id="tempNumb">430°c</p>
      </div>
     </div>
 

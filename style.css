@@ -30,7 +30,26 @@ body{
 .mercury-image{
     overflow-clip-margin: content-box;
     overflow: clip;
+    
+   
 }
+
+.geologyImg{
+    position:absolute;
+    left: 230px;
+    top: 440px;
+    width: 165px !important;
+    height: 200px !important;
+}
+
+.wikiadd{
+    position: absolute;
+    margin-top: 2px;
+  margin-left: 2px;
+    width:12px;
+    height:12px;
+}
+
 
 .navigacia{
     display: flex;
@@ -271,11 +290,12 @@ body{
     margin-left: 165px;
     margin-right: 165px;
     margin-bottom: 0px;
+    
 }
 
 
 .image-box img{
-    margin:95px 95px 95px 150px;
+    margin:65px 95px 95px 150px;
     width: 290px;
     height: 290px;
 }
@@ -314,9 +334,8 @@ body{
    font-size: 15px;
    line-height: 22px;
    opacity:.5;
-   position: absolute;
-   margin-left:3px;
-   margin-top:272px;
+   margin-left: -13px;
+  margin-top: 209px;
 }
 .wikipedia{
     display: flex;
@@ -374,7 +393,7 @@ body{
     margin: 24px 20px 0;
     color:#419EBB;
     position: absolute;
-    margin-top: -252px;
+    margin-top: -193px;
   margin-left: 1025px;
  
 
@@ -491,7 +510,7 @@ font-family: League Spartan;
     gap:22px;
     position: absolute;
     margin-left:241px;
-    margin-top: 58px;
+    margin-top: 142px;
     padding: 28px 24px 48px;
    
 
@@ -534,8 +553,27 @@ font-family: League Spartan;
 
 
 
-.special {
-    background-color: #419EBB;
+/* .special {
+    background-color:#fff;
+} */
+
+#demo {
+    display: flex;
+    justify-content: flex-start; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 16px 24px 32px; 
+   text-align: left;
+   font-family: League Spartan;
+   font-style: normal;
+   color: #fff;
+   font-weight: 400;
+   font-size: 15px;
+   line-height: 22px;
+   opacity:.5;
+   position: absolute;
+   margin-left:3px;
+   margin-top:123px;
 }
 
 
@@ -569,6 +607,14 @@ font-family: League Spartan;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    margin-top:272px;
+    margin-left:195px;
+}
+.geologyImg{
+    position: absolute;
+    left: -206px;
+  top: -18px;
 }
 .planet-info{
     position: absolute;
@@ -648,6 +694,19 @@ font-family: League Spartan;
     letter-spacing: -.75px;
     margin-left: 15px;
 }
+
+
+.wikiadd{
+    position: absolute;
+    margin-top: 2px;
+  margin-left: 57px;
+    width:12px;
+    height:12px;
+}
+
+
+
+
 .line{
     position: absolute;
     margin-top: 127px;
@@ -719,7 +778,28 @@ font-family: League Spartan;
     background-size: cover;
     max-width: 100vw;
     height: 100vh;
+    width:375px;
 }
+
+.image-box img{
+    position: absolute;
+    width:111px !important;
+    height:111px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: -259px;
+    margin-left: -248px;
+  }
+
+  .image-box .geologyImg{
+    position: absolute;
+    margin-top: -144px;
+    margin-left: -18px;
+    width:80px;
+    height:90px;
+  }
 
   .navigacia p{
 
@@ -732,11 +812,12 @@ font-family: League Spartan;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    z-index:99;
+   
     
     
 
   }
+
   .logo{
     font-family: Antonio;
     font-style: normal;
@@ -835,12 +916,7 @@ font-family: League Spartan;
     margin-left: 74px;
     margin-top: 375px;
 }
-.main-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 #demo{
     display: flex;
     flex-direction: column;
@@ -852,18 +928,39 @@ font-family: League Spartan;
     text-align: center;
 
 }
+.wikiadd{
+    width:12px;
+    height:12px;
+}
 .main-text{
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-left: 206px;
-    margin-top: 345px;
+    margin-left: 106px;
+    margin-top: -213px;
 }
 .wikipedia{
     position:absolute;
-    margin-top: 871px;
-    margin-left: 221px;
+    margin-top: 240px;
+    margin-left: 104px;
+}
+
+.wikipedia a{
+    position:absolute;
+    margin-top: 36px;
+    margin-left: 28px;
+}
+.wikipedia p{
+    position:absolute;
+    margin-top: 240px;
+    margin-left: 114px;
+
+}
+#wikiSource{
+    position:absolute;
+    margin-top: 55px;
+    margin-left: -10px;
 }
 
 .info2{
@@ -1013,9 +1110,19 @@ transition: background 2s ease-in-out;
     opacity: .2;
     margin-bottom:24px;
 }
+.planet-info p{
+    position: absolute;
+    margin-left: -339px;
+    margin-top: -722px;
+    width: 80%;;
+  flex-wrap: wrap;
+}
+
 
 
 }
+
+
 
 
 
